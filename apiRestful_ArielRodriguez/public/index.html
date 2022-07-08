@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ficha del producto</title>
+  </head>
+  <body>
+    <div id="alumno">
+      <form
+        id="ficha"
+        action="/api/productos"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div>
+          <label for="title">Nombre del producto:</label>
+          <input type="text" value="" id="nombre" name="title" />
+        </div>
+        <br /><br />
+        <div>
+          <label for="price">Precio del producto:</label>
+          <input type="number" value="" id="control" name="price" />
+        </div>
+        <br /><br />
+        <div>
+          <label for="imgProduct">Imagen del producto:</label>
+          <input type="file" value="" id="control" name="imgProduct" />
+        </div>
+        <br /><br />
+        <input type="submit" value="Cargar producto" />
+      </form>
+    </div>
+  </body>
+</html>
