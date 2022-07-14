@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous"
+        />
+        <title>Ficha del producto</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <form
+                    class="mt-5 flex justify-content-around col-4"
+                    id="formulario"
+                    action="productos"
+                    method="post"
+                    enctype="multipart/form-data"
+                >
+                    <h2>Carga de Productos</h2>
+
+                    <div>
+                        <label for="title">Nombre del producto:</label>
+                        <input
+                            class="col-11"
+                            type="text"
+                            value=""
+                            id="nombre"
+                            name="title"
+                            required
+                        />
+                    </div>
+                    <br /><br />
+                    <div>
+                        <label for="price">Precio del producto:</label>
+                        <input
+                            class="col-11"
+                            type="number"
+                            value=""
+                            id="precio"
+                            name="price"
+                            required
+                        />
+                    </div>
+                    <br /><br />
+                    <div>
+                        <label for="imgProduct">Imagen del producto:</label>
+                        <input
+                            required
+                            type="file"
+                            value=""
+                            id="imagen"
+                            name="imgProduct"
+                        />
+                    </div>
+                    <br /><br />
+                    <div class="col-12">
+                    <button type="submit" class="btn btn-primary col-11">
+                        Cargar producto
+                    </button>
+                </form>
+
+                <button class="mt-5 row btn btn-info col-12" >
+                    <a href="productos">Ver los productos cargados </a>  
+                </button>
+                </div>
+            </div>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
