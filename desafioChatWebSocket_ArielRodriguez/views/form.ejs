@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: { extend: { colors: { clifford: "#da373d" } } },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>Ficha del producto</title>
+  </head>
+  <body class="bg-indigo-600">
+    <div class="flex w-full flex-wrap justify-around">
+      <!-- Div Formulario de carga de productos -->
+      <div class="w-5/12 mt-10">
+        <form
+          class="bg-indigo-500 p-8 text-white rounded-xl shadow-xl mt-10"
+          id="formulario"
+          enctype="multipart/form-data"
+          style="height: 30rem"
+        >
+          <h2 class="text-center text-3xl bold">Carga de Productos</h2>
+
+          <div class="mt-8">
+            <label for="title">Nombre del producto:</label>
+            <input
+              class="w-full text-black rounded-xl"
+              type="text"
+              value=""
+              id="nombre"
+              name="title"
+              required
+            />
+          </div>
+          <div class="mt-8">
+            <label for="price">Precio del producto:</label>
+            <input
+              class="w-full text-black rounded-xl"
+              type="number"
+              value=""
+              id="precio"
+              name="price"
+              required
+            />
+          </div>
+          <div class="mt-8">
+            <label for="imgProduct">Imagen del producto:</label>
+            <input
+              class="w-full text-indigo-400"
+              required
+              type="file"
+              value=""
+              id="imagen"
+              name="imgProduct"
+            />
+          </div>
+          <br /><br />
+          <div class="flex justify-center w-full">
+            <button
+            id="btnForm"
+              type="submit"
+              class="bg-indigo-600 w-full p-4 justify-end rounded-xl shadow-xl bold text-lg hover:bg-indigo-300"
+            >
+              Cargar producto
+            </button>
+          </div>
+        </form>
+      </div>
+      <!-- Div de Listado de productos -->
+      <div
+        class="w-5/12 mt-20 bg-indigo-500 p-8 text-white rounded-xl shadow-xl grid-span-2 row-span-2 overflow-auto"
+        style="height: 30rem"
+      >
+        <h2 class="text-center text-3xl mt-2 bold">Listado de Productos</h2>
+        <table
+          class="mt-16 table-fixed w-full border-separate overflow-auto max-h-24"
+        >
+          <thead>
+            <tr class="bg-indigo-600">
+              <th class="w-2/12">Id</th>
+              <th class="w-4/12">Nombre</th>
+              <th class="w-4/12">Precio</th>
+              <th class="w-4/12">Imagen</th>
+            </tr>
+          </thead>
+
+          <tbody class="mt-10" id="tableProduct">
+           
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Div de Mensajeria -->
+
+        </div>
+        <div class="flex justify-around">
+      <div
+        class="bg-indigo-500 p-8 text-white rounded-xl shadow-xl mt-10 w-5/12"
+>
+        <h1 class="text-center text-3xl bold">Enviar Mensaje</h1>
+        <h2 class="mt-6" id="username"></h2>
+        <form>
+          <input
+            class="w-full text-black rounded-xl"
+            type="text"
+            value=""
+            id="msn"
+            name="msn"
+            required
+          />
+          <button
+            id="send"
+            type="submit"
+            class="bg-indigo-600 mt-6 w-full p-4 justify-end rounded-xl shadow-xl bold text-lg hover:bg-indigo-300"
+          >
+            Enviar mensaje
+          </button>
+        </form>
+      </div>
+
+      <!-- Div de Centro de notificaciones -->
+      <div
+        class="bg-indigo-500 p-8 text-white rounded-xl shadow-xl mt-10 w-5/12"
+      >
+        <h1 class="text-center text-3xl bold">Centro de notificaciones</h1>
+        <div class="bg-white w-11/12 h-52 mt-4 ml-auto mr-auto overflow-y-auto">
+          <div id="chat" class="text-blue-600 p-2"></div>
+        </div>
+      </div>
+    </div>
+        </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/public/chat.js"></script>
+  </body>
+</html>
